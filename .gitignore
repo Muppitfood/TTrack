@@ -1,1 +1,3 @@
 .idea/
+*.sqlite3
+TTrack/__pycache__/
