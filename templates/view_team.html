@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% if team %}
+    <p>{{ team.name }}</p>
+{% endif %}
+{% if players %}
+    {% for player in players %}
+        <p>{{ player.name }}</p>
+    {% endfor %}
+{% endif %}
+</body>
+</html>

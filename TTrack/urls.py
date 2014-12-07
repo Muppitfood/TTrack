@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'organizer.views.index'),
+    url(r'^organizer/', include('organizer.urls')),
 )
