@@ -25,6 +25,8 @@ class Tournament(models.Model):
 
 class Team(models.Model):
     name = models.CharField(max_length=20, unique=True)
+    wins = models.IntegerField()
+    losses = models.IntegerField()
 
     def __str__(self):
         return '%s' % self.name
@@ -41,6 +43,8 @@ class Manager(models.Model):
 class Player(models.Model):
     name = models.CharField(max_length=20)
     role = models.CharField(max_length=10)
+    wins = models.IntegerField()
+    losses = models.IntegerField()
     bio = models.TextField()
     team = models.ForeignKey('Team')
 
