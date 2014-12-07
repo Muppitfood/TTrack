@@ -68,5 +68,8 @@ class Match(models.Model):
     team_two = models.ForeignKey('Team', related_name='team_two')
     tournament = models.ForeignKey('Tournament')
 
+    class Meta:
+        verbose_name_plural = "Matches"
+
     def __str__(self):
         return '%s' % self.id

@@ -22,9 +22,9 @@
                         <td>{{ match.id }}</td>
                         <td>{{ match.prize }}</td>
                         <td>{{ match.round }}</td>
-                        <td>{{ match.team_one }}</td>
-                        <td>{{ match.team_two }}</td>
-                        <td>{{ match.tournament }}</td>
+                        <td><a href="/organizer/team/{{ match.team_one.id }}">{{ match.team_one }}</a></td>
+                        <td><a href="/organizer/team/{{ match.team_two.id }}">{{ match.team_two }}</a></td>
+                        <td><a href="/organizer/tournament/{{ match.tournament.id }}">{{ match.tournament }}</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

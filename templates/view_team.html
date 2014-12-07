@@ -6,11 +6,12 @@
 </head>
 <body>
 {% if team %}
-    <p>{{ team.name }}</p>
+    <p>Team: {{ team.name }}</p>
 {% endif %}
 {% if players %}
+    <p>Players:</p>
     {% for player in players %}
-        <p>{{ player.name }}</p>
+        <a href="/organizer/player/{{ player.id }}">{{ player.name }}</a>
     {% endfor %}
 {% endif %}
 </body>

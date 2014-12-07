@@ -8,4 +8,14 @@ urlpatterns = patterns(
         'organizer.views.view_team',
         name='view_team'
     ),
+    url(
+        r'^player/(?P<id>\d+)/$',
+        'organizer.views.view_player',
+        name='view_player'
+    ),
+    url(
+        r'^tournament/(?P<id>\d+)/$',
+        'organizer.views.view_tournament',
+        name='view_tournament'
+    ),
 )
