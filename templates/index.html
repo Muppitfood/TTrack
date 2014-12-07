@@ -6,7 +6,30 @@
 </head>
 <body>
 <p>
-    Hello, World!
+    {% if matches %}
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>Prize</td>
+                    <td>Round</td>
+                    <td>Team One</td>
+                    <td>Team Two</td>
+                    <td>Tournament</td>
+                </tr>
+                {% for match in matches %}
+                    <tr>
+                        <td>{{ match.id }}</td>
+                        <td>{{ match.prize }}</td>
+                        <td>{{ match.round }}</td>
+                        <td>{{ match.team_one }}</td>
+                        <td>{{ match.team_two }}</td>
+                        <td>{{ match.tournament }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 </p>
 </body>
 </html>
