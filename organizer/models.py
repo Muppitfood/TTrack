@@ -14,7 +14,7 @@ class Location(models.Model):
 
 class Tournament(models.Model):
     name = models.CharField(max_length=25)
-    location = models.ForeignKey('Location')
+    location = models.ForeignKey('Location', null=True)
 
 
 class Team(models.Model):
