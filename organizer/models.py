@@ -11,19 +11,31 @@ class Location(models.Model):
     class Meta:
         unique_together = (("city", "state", "address"),)
 
+    def __str__(self):
+        return '%s' % self.address
+
 
 class Tournament(models.Model):
     name = models.CharField(max_length=25)
     location = models.ForeignKey('Location', null=True)
 
+    def __str__(self):
+        return '%s' % self.name
+
 
 class Team(models.Model):
     name = models.CharField(max_length=20, unique=True)
+
+    def __str__(self):
+        return '%s' % self.name
 
 
 class Manager(models.Model):
     name = models.CharField(max_length=20)
     team = models.ForeignKey('Team')
+
+    def __str__(self):
+        return '%s' % self.name
 
 
 class Player(models.Model):
@@ -32,11 +44,17 @@ class Player(models.Model):
     bio = models.TextField()
     team = models.ForeignKey('Team')
 
+    def __str__(self):
+        return '%s' % self.name
+
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=25, unique=True)
     contract_end = models.DateField(db_index=True)
     contribution_size = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return '%s' % self.name
 
 
 class Match(models.Model):
@@ -45,3 +63,6 @@ class Match(models.Model):
     team_one = models.ForeignKey('Team', related_name='team_one')
     team_two = models.ForeignKey('Team', related_name='team_two')
     tournament = models.ForeignKey('Tournament')
+
+    def __str__(self):
+        return '%s' % self.id
