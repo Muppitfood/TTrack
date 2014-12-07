@@ -29,6 +29,10 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+TEMPLATE_DIRS = (
+    '/users/connor/Work/Class/Game/TTrack/templates',
+)
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
