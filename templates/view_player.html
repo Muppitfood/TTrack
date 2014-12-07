@@ -6,7 +6,26 @@
 </head>
 <body>
 {% if player %}
-    <p>{{ player.name }}</p>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>Role</td>
+                <td>Wins</td>
+                <td>Losses</td>
+                <td>Bio</td>
+                <td>Team</td>
+            </tr>
+            <tr>
+                <td>{{ player.id }}</td>
+                <td>{{ player.role }}</td>
+                <td>{{ player.wins }}</td>
+                <td>{{ player.losses }}</td>
+                <td>{{ player.bio }}</td>
+                <td><a href="/organizer/team/{{ player.team.id }}">{{ player.team.name }}</a></td>
+            </tr>
+        </tbody>
+    </table>
 {% endif %}
 </body>
 </html>

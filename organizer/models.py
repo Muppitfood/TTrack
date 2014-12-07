@@ -67,6 +67,7 @@ class Match(models.Model):
     team_one = models.ForeignKey('Team', related_name='team_one')
     team_two = models.ForeignKey('Team', related_name='team_two')
     tournament = models.ForeignKey('Tournament')
+    winner = models.ForeignKey('Team', related_name='Winner', null=True)
 
     class Meta:
         verbose_name_plural = "Matches"

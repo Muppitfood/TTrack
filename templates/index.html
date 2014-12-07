@@ -5,31 +5,31 @@
     <title></title>
 </head>
 <body>
-<p>
-    {% if matches %}
-        <table border="1">
-            <tbody>
+{% if matches %}
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>Prize</td>
+                <td>Round</td>
+                <td>Team One</td>
+                <td>Team Two</td>
+                <td>Tournament</td>
+                <td>Winner</td>
+            </tr>
+            {% for match in matches %}
                 <tr>
-                    <td>ID</td>
-                    <td>Prize</td>
-                    <td>Round</td>
-                    <td>Team One</td>
-                    <td>Team Two</td>
-                    <td>Tournament</td>
+                    <td>{{ match.id }}</td>
+                    <td>{{ match.prize }}</td>
+                    <td>{{ match.round }}</td>
+                    <td><a href="/organizer/team/{{ match.team_one.id }}">{{ match.team_one }}</a></td>
+                    <td><a href="/organizer/team/{{ match.team_two.id }}">{{ match.team_two }}</a></td>
+                    <td><a href="/organizer/tournament/{{ match.tournament.id }}">{{ match.tournament }}</a></td>
+                    <td><a href="/organizer/team/{{ match.winner.id }}">{{ match.winner }}</a></td>
                 </tr>
-                {% for match in matches %}
-                    <tr>
-                        <td>{{ match.id }}</td>
-                        <td>{{ match.prize }}</td>
-                        <td>{{ match.round }}</td>
-                        <td><a href="/organizer/team/{{ match.team_one.id }}">{{ match.team_one }}</a></td>
-                        <td><a href="/organizer/team/{{ match.team_two.id }}">{{ match.team_two }}</a></td>
-                        <td><a href="/organizer/tournament/{{ match.tournament.id }}">{{ match.tournament }}</a></td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endif %}
-</p>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
 </body>
 </html>

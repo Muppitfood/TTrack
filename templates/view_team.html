@@ -6,7 +6,20 @@
 </head>
 <body>
 {% if team %}
-    <p>Team: {{ team.name }}</p>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>Name</td>
+                <td>Wins</td>
+                <td>Losses</td>
+            </tr>
+            <tr>
+                <td>{{ team.name }}</td>
+                <td>{{ team.wins }}</td>
+                <td>{{ team.losses }}</td>
+            </tr>
+        </tbody>
+    </table>
 {% endif %}
 {% if players %}
     <p>Players:</p>

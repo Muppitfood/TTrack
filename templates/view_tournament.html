@@ -6,7 +6,24 @@
 </head>
 <body>
 {% if tournament %}
-    <p>{{ tournament.name }}</p>
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>City</td>
+                <td>State</td>
+            </tr>
+            <tr>
+                <td>{{ tournament.id }}</td>
+                <td>{{ tournament.name }}</td>
+                <td>{{ tournament.location.address }}</td>
+                <td>{{ tournament.location.city }}</td>
+                <td>{{ tournament.location.state }}</td>
+            </tr>
+        </tbody>
+    </table>
 {% endif %}
 </body>
 </html>
