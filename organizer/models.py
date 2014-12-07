@@ -34,7 +34,7 @@ class Team(models.Model):
 
 class Manager(models.Model):
     name = models.CharField(max_length=20)
-    team = models.ForeignKey('Team')
+    team = models.ForeignKey('Team', null=True)
 
     def __str__(self):
         return '%s' % self.name
@@ -56,6 +56,7 @@ class Sponsor(models.Model):
     name = models.CharField(max_length=25, unique=True)
     contract_end = models.DateField(db_index=True)
     contribution_size = models.DecimalField(max_digits=10, decimal_places=2)
+    team = models.ForeignKey('Team', null=True)
 
     def __str__(self):
         return '%s' % self.name

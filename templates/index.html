@@ -31,5 +31,45 @@
         </tbody>
     </table>
 {% endif %}
+{% if sponsors %}
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Contract</td>
+                <td>Contribution</td>
+                <td>Team</td>
+            </tr>
+            {% for sponsor in sponsors %}
+                <tr>
+                    <td>{{ sponsor.id }}</td>
+                    <td>{{ sponsor.name }}</td>
+                    <td>{{ sponsor.contract_end }}</td>
+                    <td>{{ sponsor.contribution_size }}</td>
+                    <td><a href="/organizer/team/{{ sponsor.team.id }}">{{ sponsor.team.name }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% if managers %}
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Team</td>
+            </tr>
+            {% for manager in managers %}
+                <tr>
+                    <td>{{ manager.id }}</td>
+                    <td>{{ manager.name }}</td>
+                    <td><a href="/organizer/team/{{ manager.team.id }}">{{ manager.team.name }}</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
 </body>
 </html>
