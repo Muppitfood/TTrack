@@ -26,11 +26,12 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 
 # Application definition
 
 TEMPLATE_DIRS = (
-    '/users/connor/Work/Class/Game/TTrack/templates',
+    os.path.join(PROJECT_PATH, '../templates'),
 )
 
 INSTALLED_APPS = (
