@@ -37,3 +37,11 @@ class Sponsor(models.Model):
     name = models.CharField(max_length=25, unique=True)
     contract_end = models.DateField(db_index=True)
     contribution_size = models.DecimalField(max_digits=10, decimal_places=2)
+
+
+class Match(models.Model):
+    prize = models.DecimalField(max_digits=10, decimal_places=2)
+    round = models.IntegerField()
+    team_one = models.ForeignKey('Team', related_name='team_one')
+    team_two = models.ForeignKey('Team', related_name='team_two')
+    tournament = models.ForeignKey('Tournament')
